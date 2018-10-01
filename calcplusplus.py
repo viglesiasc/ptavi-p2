@@ -27,13 +27,15 @@ with open(sys.argv[1]) as fichero:
                 producto = Calc_Hija.multiplicacion(operando_aux, int(operado))
                 operando_aux = producto
         elif linea[0] == 'divide':
-            operando_aux = int(operandos[0])
-            for operando in operandos[1:]:
-                operando_aux = Calc_Hija.division(operando_aux, int(operando))
-                if int(operando) == 0:
-                    print('No se puede dividir por zero')
-                else:
+            try:
+                operando_aux = int(operandos[0])
+                for operando in operandos[1:]:
+                    operando_aux = Calc_Hija.division(operando_aux,
+                                                      int(operando))
                     razon = operando_aux
+            except ZeroDivisionError:
+                sys.exit('Division by zero is not allowed')
+
         else:
             print('No se puede realizar la operacion')
 
