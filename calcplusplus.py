@@ -42,4 +42,4 @@ with open(sys.argv[1]) as fichero:
 print("Suma = " + str(suma))
 print("Resta = " + str(resta))
 print("Multiplicacion = " + str(producto))
-print("Division = " + str(int(razon)))
+print("Division = " + str(razon))
